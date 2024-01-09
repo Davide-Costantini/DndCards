@@ -25,7 +25,7 @@ jobs:
       
     # changes the base-tag in index.html from '/' to 'DndCards' to match GitHub Pages repository subdirectory
     - name: Change base-tag in index.html from / to DndCards
-      run: sed -i 's/<base href="\/" \/>/<base href="\/DndCards\/" \/>/g' release/wwwroot/index.htmly
+      run: sed -i 's/<base href="\/" \/>/<base href="\/DndCards\/" \/>/g' release/wwwroot/index.html
 
     # changes the base-tag in index.html from '/' to 'BlazorGitHubPagesDemo' to match GitHub Pages repository subdirectory
     - name: Fix service-worker-assets.js hashes
