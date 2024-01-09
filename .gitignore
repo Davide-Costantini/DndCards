@@ -1,0 +1,9 @@
+DndCards/DndCards/.vs/
+
+# Ignore 'bin', 'obj' and '.vs' folders
+**/bin/
+**/obj/
+**/.vs/
+
+# Ignore user settings
+**/*.csproj.user
