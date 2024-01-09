@@ -33,11 +33,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-6TjAe4vTlDtu46vIHy0NVEzaMD7OQ3OenLsC5Er9cZw=",
+      "hash": "sha256-lgi7TXT3VBPFcWuM32TZ67bNpudEnWONjFAG46Y5JpY=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-ANv8JcpCm3pBVj9VN0smmqudBRDf9TVk0ztKO7Qeizc=",
+      "hash": "sha256-2umSMgoU45xVy\/C01LtgFpVazJzMHQjuSmlMbHnU\/Mg=",
       "url": "_framework\/DndCards.wasm"
     },
     {
@@ -205,5 +205,5 @@
       "url": "sample-data\/weather.json"
     }
   ],
-  "version": "TvS3ZaUh"
+  "version": "sn7hW3\/J"
 };
