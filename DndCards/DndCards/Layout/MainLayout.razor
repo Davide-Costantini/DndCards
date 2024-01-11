@@ -1,16 +1,39 @@
 ﻿@inherits LayoutComponentBase
+
+<PageTitle>Dnd Cards</PageTitle>
+
 <div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
     <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
+        <RadzenLayout>
+            <RadzenHeader>
+                <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
+                    <RadzenSidebarToggle Click="@ToggleSidebar" />
+                    <RadzenLabel Text="@_headerText" />
+                </RadzenStack>
+            </RadzenHeader>
+            <RadzenSidebar @bind-Expanded="@_isSidebarExpanded">
+                <RadzenPanelMenu>
+                    <RadzenPanelMenuItem Text="@_menuItemCardBuilder" Icon="create" Path="/" />
+                    <RadzenPanelMenuItem Text="@_menuItemCardThemes" Icon="color_lens" Path="/themes" />
+                </RadzenPanelMenu>
+            </RadzenSidebar>
+            <RadzenBody>
+                <div class="rz-p-4">
+                    @Body
+                </div>
+            </RadzenBody>
+        </RadzenLayout>
     </main>
 </div>
+
+@code {
+    private bool _isSidebarExpanded = true;
+    private readonly string _headerText = "Dnd Cards, build your imagination";
+    private readonly string _menuItemCardBuilder = "Card builder";
+    private readonly string _menuItemCardThemes = "Themes";
+
+    private void ToggleSidebar()
+    {
+        _isSidebarExpanded = !_isSidebarExpanded;
+    }
+}
