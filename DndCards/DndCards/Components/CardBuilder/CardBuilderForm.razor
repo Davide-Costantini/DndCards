@@ -1,0 +1,41 @@
+﻿@inject IStringLocalizer<App> Loc
+
+<RadzenFileInput TValue="string" class="w-100" Change=@LoadImage MaxFileSize="int.MaxValue" ChooseText="@Loc[nameof(Resources.App.ChooseAnImage)]" />
+
+<RadzenText class="mt-5" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemName)]</RadzenText>
+<RadzenTextBox class="w-100" @bind-Value="@_cardItem.Name" @oninput=OnPropertyChanged />
+
+<RadzenToggleButton class="mt-3 w-100" @bind-Value="@_cardItem.RequiresAttunement" Change=@OnPropertyChanged
+                    Text="@(_cardItem.RequiresAttunement ? Loc[nameof(Resources.App.RequiresAttunement)] : Loc[nameof(Resources.App.DoesNotRequireAttunement)] )"
+                    ButtonStyle="ButtonStyle.Light" ToggleButtonStyle="ButtonStyle.Dark" />
+
+<RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemType)]</RadzenText>
+<RadzenTextBox class="w-100" @bind-Value="@_cardItem.Type" @oninput=OnPropertyChanged />
+
+<RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemDescription)]</RadzenText>
+<RadzenHtmlEditor @bind-Value=@_cardItem.Body style="height: 300px;" Input=@OnPropertyChanged Change=@OnPropertyChanged 
+                  Paste=@OnPropertyChanged Execute=@OnPropertyChanged UploadUrl="upload/image" />
+
+<RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemCharacteristics)]</RadzenText>
+<RadzenTextBox class="w-100" @bind-Value="@_cardItem.Characteristics" @oninput=OnPropertyChanged />
+
+<RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemFooter)]</RadzenText>
+<RadzenTextBox class="w-100" @bind-Value="@_cardItem.Footer" @oninput=OnPropertyChanged />
+
+@code {
+    private CardItem _cardItem = new();
+
+    [Parameter]
+    public EventCallback<CardItem> ShouldRepaint { get; set; }
+
+    private async Task OnPropertyChanged()
+    {
+        await ShouldRepaint.InvokeAsync(_cardItem);
+    }
+
+    private async Task LoadImage(string image)
+    {
+        _cardItem.ImageUri = image;
+        await OnPropertyChanged();
+    }
+}

@@ -1,0 +1,57 @@
+﻿
+<div class="d-flex justify-content-center">
+    @* <img src="@_cardItem.ImageUri" width="@_cardItem.ImageWidth" height="@_cardItem.ImageHeight" />
+    <span>@((MarkupString)_cardItem.Body)</span> *@
+    <div class="card" style="width: @GetCardWidth(); height: @GetCardHeight();">
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public CardItem CardItem { get; set; } = new();
+    private CardItem _cardItem = new();
+
+    protected override void OnParametersSet()
+    {
+        if (HasItemChanged())
+        {
+            _cardItem.Name = CardItem.Name;
+            _cardItem.Body = CardItem.Body;
+            _cardItem.ImageUri = CardItem.ImageUri;
+            _cardItem.RequiresAttunement = CardItem.RequiresAttunement;
+            _cardItem.Type = CardItem.Type;
+            _cardItem.Characteristics = CardItem.Characteristics;
+            _cardItem.Footer = CardItem.Footer;
+        }
+    }
+
+    private bool HasItemChanged()
+    {
+        return _cardItem.Body != CardItem.Body
+            || _cardItem.Name != CardItem.Name
+            || _cardItem.ImageUri != CardItem.ImageUri
+            || _cardItem.RequiresAttunement != CardItem.RequiresAttunement
+            || _cardItem.Type != CardItem.Type
+            || _cardItem.Characteristics != CardItem.Characteristics
+            || _cardItem.Footer != CardItem.Footer;
+    }
+
+    private string GetCardWidth()
+    {
+        return _cardItem.ImageWidth.ToString() + "px";
+    }
+
+    private string GetCardHeight()
+    {
+        return _cardItem.ImageHeight.ToString() + "px";
+    }
+}
+
+<style>
+    .card {
+        background: black;
+        border: solid;
+        border-radius: 5px;
+    }
+</style>
