@@ -1,8 +1,69 @@
 ﻿
 <div class="d-flex justify-content-center">
-    @* <img src="@_cardItem.ImageUri" width="@_cardItem.ImageWidth" height="@_cardItem.ImageHeight" />
-    <span>@((MarkupString)_cardItem.Body)</span> *@
     <div class="card" style="width: @GetCardWidth(); height: @GetCardHeight();">
+        <div class="card-name">
+            @if (!string.IsNullOrWhiteSpace(_cardItem.Name))
+            {
+                <div>@_cardItem.Name</div>
+            }
+            else
+            {
+                <div>&nbsp;</div>
+            }
+        </div>
+
+
+        <div>@_cardItem.RequiresAttunement</div>
+
+        <img src="@_cardItem.ImageUri" class="card-image" style="width: @GetImageWidth(); height: @GetImageHeight();" />
+
+        <div class="card-floater">
+            <div class="card-type">
+                <div class="card-type-text">
+                    @if (!string.IsNullOrWhiteSpace(_cardItem.Type))
+                    {
+                        <div>@_cardItem.Type</div>
+                    }
+                    else
+                    {
+                        <div>&nbsp;</div>
+                    }
+                </div>
+            </div>
+
+            <div>
+                @if (!string.IsNullOrWhiteSpace(_cardItem.Body))
+                {
+                    <div>@((MarkupString)_cardItem.Body)</div>
+                }
+                else
+                {
+                    <div>&nbsp;</div>
+                }
+            </div>
+
+            <div>
+                @if (!string.IsNullOrWhiteSpace(_cardItem.Characteristics))
+                {
+                    <div>@(_cardItem.Characteristics)</div>
+                }
+                else
+                {
+                    <div>&nbsp;</div>
+                }
+            </div>
+
+            <div>
+                @if (!string.IsNullOrWhiteSpace(_cardItem.Footer))
+                {
+                    <div>@(_cardItem.Footer)</div>
+                }
+                else
+                {
+                    <div>&nbsp;</div>
+                }
+            </div>
+        </div>
     </div>
 </div>
 
@@ -14,35 +75,31 @@
 
     protected override void OnParametersSet()
     {
-        if (HasItemChanged())
-        {
-            _cardItem.Name = CardItem.Name;
-            _cardItem.Body = CardItem.Body;
-            _cardItem.ImageUri = CardItem.ImageUri;
-            _cardItem.RequiresAttunement = CardItem.RequiresAttunement;
-            _cardItem.Type = CardItem.Type;
-            _cardItem.Characteristics = CardItem.Characteristics;
-            _cardItem.Footer = CardItem.Footer;
-        }
-    }
-
-    private bool HasItemChanged()
-    {
-        return _cardItem.Body != CardItem.Body
-            || _cardItem.Name != CardItem.Name
-            || _cardItem.ImageUri != CardItem.ImageUri
-            || _cardItem.RequiresAttunement != CardItem.RequiresAttunement
-            || _cardItem.Type != CardItem.Type
-            || _cardItem.Characteristics != CardItem.Characteristics
-            || _cardItem.Footer != CardItem.Footer;
+        _cardItem.Name = CardItem.Name;
+        _cardItem.Body = CardItem.Body;
+        _cardItem.ImageUri = !string.IsNullOrWhiteSpace(CardItem.ImageUri) ? CardItem.ImageUri : CardItem.DefaultImage;
+        _cardItem.RequiresAttunement = CardItem.RequiresAttunement;
+        _cardItem.Type = CardItem.Type;
+        _cardItem.Characteristics = CardItem.Characteristics;
+        _cardItem.Footer = CardItem.Footer;
     }
 
     private string GetCardWidth()
     {
-        return _cardItem.ImageWidth.ToString() + "px";
+        return _cardItem.CardWidth.ToString() + "px";
     }
 
     private string GetCardHeight()
+    {
+        return _cardItem.CardHeight.ToString() + "px";
+    }
+
+    private string GetImageWidth()
+    {
+        return _cardItem.ImageWidth.ToString() + "px";
+    }
+
+    private string GetImageHeight()
     {
         return _cardItem.ImageHeight.ToString() + "px";
     }
@@ -50,8 +107,61 @@
 
 <style>
     .card {
-        background: black;
-        border: solid;
-        border-radius: 5px;
+        background-color: black;
+        border-radius: 8px;
+    }
+
+    .card-name {
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #f2f2f2;
+        width: 95%;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-size: x-large;
+        border: solid 2px;
+        border-radius: 8px;
+        border-color: #565656;
+        box-shadow: 2px 2px 2px #565656;
+        translate: 0px 20px;
+    }
+
+    .card-image {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card-floater {
+        background-color: #f2f2f2;
+        width: 95%;
+        min-height: 290px;
+        max-height: 290px;
+        border-radius: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 4px;
+        padding-left: 4px;
+        padding-right: 4px;
+        translate: 0px -150px;
+    }
+
+    .card-type {
+        background-color: black;
+        width: 105%;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border: solid 2px;
+        border-radius: 8px;
+        border-color: #696969;
+        box-shadow: 4px 4px 4px;
+        translate: -11px -20px;
+    }
+
+    .card-type-text {
+        color: #f2f2f2;
+        font-size: large;
+        font-weight: bold;
+        text-align: start;
+        padding-left: 12px;
     }
 </style>
