@@ -61,11 +61,29 @@ namespace DndCards.Resources {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Card builder.
+        /// </summary>
+        public static string CardBuilder {
+            get {
+                return ResourceManager.GetString("CardBuilder", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Choose an image.
         /// </summary>
         public static string ChooseAnImage {
             get {
                 return ResourceManager.GetString("ChooseAnImage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Dnd Cards, build your imagination.
+        /// </summary>
+        public static string DndCardsHeader {
+            get {
+                return ResourceManager.GetString("DndCardsHeader", resourceCulture);
             }
         }
         
@@ -129,6 +147,15 @@ namespace DndCards.Resources {
         public static string RequiresAttunement {
             get {
                 return ResourceManager.GetString("RequiresAttunement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Themes.
+        /// </summary>
+        public static string Themes {
+            get {
+                return ResourceManager.GetString("Themes", resourceCulture);
             }
         }
     }

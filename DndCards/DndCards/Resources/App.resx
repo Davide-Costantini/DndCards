@@ -117,9 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="CardBuilder" xml:space="preserve">
+    <value>Card builder</value>
+    <comment>MainLayout</comment>
+  </data>
   <data name="ChooseAnImage" xml:space="preserve">
     <value>Choose an image</value>
     <comment>CardBuilderForm</comment>
+  </data>
+  <data name="DndCardsHeader" xml:space="preserve">
+    <value>Dnd Cards, build your imagination</value>
+    <comment>MainLayout</comment>
   </data>
   <data name="DoesNotRequireAttunement" xml:space="preserve">
     <value>Does not require attunement</value>
@@ -148,5 +156,9 @@
   <data name="RequiresAttunement" xml:space="preserve">
     <value>Requires attunement</value>
     <comment>CardBuilderForm</comment>
+  </data>
+  <data name="Themes" xml:space="preserve">
+    <value>Themes</value>
+    <comment>MainLayout</comment>
   </data>
 </root>

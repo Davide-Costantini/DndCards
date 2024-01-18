@@ -1,4 +1,5 @@
 ﻿@inherits LayoutComponentBase
+@inject IStringLocalizer<App> Loc
 
 <PageTitle>Dnd Cards</PageTitle>
 
@@ -8,13 +9,13 @@
             <RadzenHeader>
                 <RadzenStack Orientation="Orientation.Horizontal" AlignItems="AlignItems.Center" Gap="0">
                     <RadzenSidebarToggle Click="@ToggleSidebar" />
-                    <RadzenLabel Text="@_headerText" />
+                    <RadzenLabel Text="@Loc[nameof(Resources.App.DndCardsHeader)]" />
                 </RadzenStack>
             </RadzenHeader>
             <RadzenSidebar @bind-Expanded="@_isSidebarExpanded">
                 <RadzenPanelMenu>
-                    <RadzenPanelMenuItem Text="@_menuItemCardBuilder" Icon="create" Path="cardBuilder" />
-                    <RadzenPanelMenuItem Text="@_menuItemCardThemes" Icon="color_lens" Path="themes" />
+                    <RadzenPanelMenuItem Text="@Loc[nameof(Resources.App.CardBuilder)]" Icon="create" Path="cardBuilder" />
+                    <RadzenPanelMenuItem Text="@Loc[nameof(Resources.App.Themes)]" Icon="color_lens" Path="themes" />
                 </RadzenPanelMenu>
             </RadzenSidebar>
             <RadzenBody>
@@ -28,9 +29,6 @@
 
 @code {
     private bool _isSidebarExpanded = true;
-    private readonly string _headerText = "Dnd Cards, build your imagination";
-    private readonly string _menuItemCardBuilder = "Card builder";
-    private readonly string _menuItemCardThemes = "Themes";
 
     private void ToggleSidebar()
     {
