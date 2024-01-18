@@ -17,7 +17,7 @@
                   Paste=@OnPropertyChanged Execute=@OnPropertyChanged UploadUrl="upload/image" />
 
 <RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemCharacteristics)]</RadzenText>
-    <RadzenTextBox class="w-100" @bind-Value="@_cardItem.Characteristics" Change=OnPropertyChanged />
+<RadzenTextBox class="w-100" @bind-Value="@_cardItem.Characteristics" Change=OnPropertyChanged />
 
 <RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemFooter)]</RadzenText>
 <RadzenTextBox class="w-100" @bind-Value="@_cardItem.Footer" Change=OnPropertyChanged />
