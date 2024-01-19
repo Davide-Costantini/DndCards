@@ -25,7 +25,11 @@
       "url": "icon-512.png"
     },
     {
-      "hash": "sha256-Oe8w+JMzT3Iv5mUrMsneKNVjg1QyqiISrR8iOw5caZs=",
+      "hash": "sha256-DMvKjjGymPfuB\/QAJlUzFkQtOTiHy0KyYrDQ88SuMtU=",
+      "url": "images\/RemirasBulwark.jpg"
+    },
+    {
+      "hash": "sha256-sGzdwDqUVQb6HqmiIxyP9sDkIPY3TepcNR/5nWhCczg=",
       "url": "index.html"
     },
     {
@@ -69,11 +73,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-WzDP84JDO8v36QuqR\/KQyTeGwv3mqmUkxgcFtVc89fY=",
+      "hash": "sha256-43eNr\/OaIm14KgUh2VaKskXtGlJFX9b1H87RfvL3HUc=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-spCO8yJECWCP3u95aQQDpVwhOT+eDyAPJNoD2rPTp38=",
+      "hash": "sha256-mMwW7yIqXwNC33c23+d25CaSlzhXEDijrQ1geGr6cqc=",
       "url": "_framework\/DndCards.wasm"
     },
     {
@@ -109,12 +113,20 @@
       "url": "_framework\/Microsoft.Extensions.Configuration.wasm"
     },
     {
-      "hash": "sha256-eqBvVgJrud0wBU8FWnFdUGwBFMu5kXIzlThXNAYhL5U=",
+      "hash": "sha256-p2H9300jeAExTm+2BRwArpXbJO52bIOHh6d6v5mQ4Kg=",
       "url": "_framework\/Microsoft.Extensions.DependencyInjection.Abstractions.wasm"
     },
     {
       "hash": "sha256-gg8xZqJsBBrrNEyUGzYqhL3sqkuZ4AHAvdTdL9nZ0S0=",
       "url": "_framework\/Microsoft.Extensions.DependencyInjection.wasm"
+    },
+    {
+      "hash": "sha256-YVzR5xdQi4kBXcJqgBx7KrBKHFJxFt0sQ4CG6T5cHII=",
+      "url": "_framework\/Microsoft.Extensions.Localization.Abstractions.wasm"
+    },
+    {
+      "hash": "sha256-VgQbNHoexjaWjPIuouCCesdZ20cbuRVYdM1ge\/TyGxg=",
+      "url": "_framework\/Microsoft.Extensions.Localization.wasm"
     },
     {
       "hash": "sha256-x\/ani8NQOjvLtAq+Vig4UTcaBRMf6VOL+v+VfwaG3mA=",
@@ -125,7 +137,7 @@
       "url": "_framework\/Microsoft.Extensions.Logging.wasm"
     },
     {
-      "hash": "sha256-6DN1malfyp0G0uOYwQY0nIN60XdXpVXUXXw0X2c8V8E=",
+      "hash": "sha256-oE3WFEwFhseBY+RkBCY09skiLtwTtiD6HaeOSuygifo=",
       "url": "_framework\/Microsoft.Extensions.Options.wasm"
     },
     {
@@ -233,7 +245,7 @@
       "url": "_framework\/System.ObjectModel.wasm"
     },
     {
-      "hash": "sha256-t2hL0e9yOuV9QavLMl7FDf1uMUO0Hcg40nABU\/Qb1eA=",
+      "hash": "sha256-D5ceEq5M\/Nn+USx45B0XmpQQYxLQcl5jmry3G8+J\/R0=",
       "url": "_framework\/System.Private.CoreLib.wasm"
     },
     {
@@ -269,7 +281,7 @@
       "url": "_framework\/System.Runtime.InteropServices.JavaScript.wasm"
     },
     {
-      "hash": "sha256-KyQLJm6IaMFpbSme9XVGtCE6HL1WBb7iwnh79tiwX+Q=",
+      "hash": "sha256-rztf2wFYSKZ0+Z1vyAxwV4N9IMBZwYuKypLPmiSRrgo=",
       "url": "_framework\/System.Runtime.wasm"
     },
     {
@@ -481,5 +493,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "53whXPaa"
+  "version": "Poq5qx4e"
 };
