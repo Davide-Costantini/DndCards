@@ -7,7 +7,7 @@
         public static readonly string DefaultType = "Shield";
         public static readonly string DefaultCharacteristics = "+2 CA";
         public static readonly string DefaultFooter = "Not for sale";
-        public static readonly string DefaultImage = "/images/RemirasBulwark.jpg";
+        public static readonly string DefaultImage = "images/RemirasBulwark.jpg";
 
         public static readonly double DefaultCardHeightOverWidth = 1.37;
         public static readonly int DefaultCardWidth = 500;
