@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "DndCards",
   "resources": {
-    "hash": "sha256-IRo/ewWprIlBknxwdlE0M9AMRhgIeSDZekZ/PULp8eI=",
+    "hash": "sha256-40EtjcdDsWgx2Nugvvln/5zt6H8QMiowLzEIrfEwR4k=",
     "jsModuleNative": {
       "dotnet.native.8.0.1.ahpp78valh.js": "sha256-SGOlISx+3G4kkvpC9Uq3qoPGsnjxGmW61QBev0lyI5U="
     },
@@ -17,7 +17,7 @@
       "icudt_no_CJK.dat": "sha256-L7sV7NEYP37/Qr2FPCePo5cJqRgTXRwGHuwF5Q+0Nfs="
     },
     "assembly": {
-      "DndCards.wasm": "sha256-mMwW7yIqXwNC33c23+d25CaSlzhXEDijrQ1geGr6cqc=",
+      "DndCards.wasm": "sha256-23x1zJYXVLAvwx43GgKYAxEpNM3ncaXisUYSqMAk4Fw=",
       "Microsoft.AspNetCore.Components.Forms.wasm": "sha256-L3rWiAi6012qD7JsgqVL3q7cOdbMfygcnkwg/kBjNWA=",
       "Microsoft.AspNetCore.Components.wasm": "sha256-PuHd/9CHHRJNs3BIyoSH8gEvlKI3cmeyjQGXb6srAss=",
       "Microsoft.AspNetCore.Components.Web.wasm": "sha256-VtZEDGeND+/0kr9iwbcUr2P6Bq6Oi8qA7sJZJlKQAZI=",

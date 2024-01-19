@@ -73,11 +73,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-43eNr\/OaIm14KgUh2VaKskXtGlJFX9b1H87RfvL3HUc=",
+      "hash": "sha256-yWFGhTOyquYL+kzh84WUeNGfL11GcczUcxFH5OebaMs=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-mMwW7yIqXwNC33c23+d25CaSlzhXEDijrQ1geGr6cqc=",
+      "hash": "sha256-23x1zJYXVLAvwx43GgKYAxEpNM3ncaXisUYSqMAk4Fw=",
       "url": "_framework\/DndCards.wasm"
     },
     {
@@ -493,5 +493,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "Poq5qx4e"
+  "version": "vfpf40xv"
 };
