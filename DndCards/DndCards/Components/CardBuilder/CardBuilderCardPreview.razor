@@ -1,4 +1,5 @@
-﻿
+﻿@inject IStringLocalizer<App> Loc
+
 <div class="d-flex justify-content-center">
     <div class="card" style="width: @GetCardWidth(); height: @GetCardHeight();">
         <div class="card-name">
@@ -13,9 +14,20 @@
         </div>
 
 
-        <div>@_cardItem.RequiresAttunement</div>
+        <div class="card-attunement">
+            @if (_cardItem.RequiresAttunement)
+            {
+                <div class="card-attunement-border">
+                    @Loc[nameof(Resources.App.Attunement)]
+                </div>
+            }
+            else
+            {
+                <div class="card-no-attunement">&nbsp;</div>
+            }
+        </div>
 
-        <img src="@_cardItem.ImageUri" class="card-image" style="width: @GetImageWidth(); height: @GetImageHeight();" />
+        <img src="@_cardItem.ImageUri" class="card-image" style="max-width: @GetImageWidth(); max-height: @GetImageHeight(); min-width: @GetImageWidth(); min-height: @GetImageHeight()" />
 
         <div class="card-floater">
             <div class="card-type">
@@ -124,6 +136,29 @@
         border-color: #565656;
         box-shadow: 2px 2px 2px #565656;
         translate: 0px 20px;
+    }
+
+    .card-attunement {
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        font-size: smaller;
+        font-weight: lighter;
+        z-index: 10;
+        translate: 0px 15px;
+    }
+
+    .card-no-attunement {
+        padding-top: 1px;
+    }
+
+    .card-attunement-border {
+        padding-left: 16px;
+        padding-right: 16px;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+        border-radius: 7px;
     }
 
     .card-image {

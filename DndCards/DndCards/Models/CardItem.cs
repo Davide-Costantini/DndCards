@@ -24,6 +24,6 @@
         public int CardWidth { get; set; } = DefaultCardWidth;
         public int CardHeight { get; set; } = DefaultCardHeight;
         public int ImageWidth { get; set; } = (int) (DefaultCardWidth * DefaultCardOverImageDimensions);
-        public int ImageHeight { get; set; } = (int)(DefaultCardHeight * DefaultCardOverImageDimensions);
+        public int ImageHeight { get; set; } = 465;
     }
 }
