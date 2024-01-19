@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.Components.WebAssembly.Hosting;
+using Microsoft.Extensions.Localization;
 using Radzen;
 
 namespace DndCards
@@ -13,6 +14,7 @@ namespace DndCards
             builder.RootComponents.Add<HeadOutlet>("head::after");
 
             builder.Services.AddScoped(sp => new HttpClient { BaseAddress = new Uri(builder.HostEnvironment.BaseAddress) });
+            builder.Services.AddLocalization(opts => { opts.ResourcesPath = "Resources"; });
 
             builder.Services.AddRadzenComponents();
 

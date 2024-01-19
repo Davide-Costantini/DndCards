@@ -1,8 +1,22 @@
 ﻿@page "/"
 @page "/cardBuilder"
 
-<RadzenText Text="Placeholder"></RadzenText>
+@using DndCards.Components.CardBuilder
+
+<RadzenRow class="rz-text-align-center" Gap="1rem">
+    <RadzenColumn class="rz-p-3">
+        <CardBuilderForm ShouldRepaint="OnShouldRepaint" />
+    </RadzenColumn>
+    <RadzenColumn class="rz-p-3">
+        <CardBuilderCardPreview CardItem="_cardItem" />
+    </RadzenColumn>
+</RadzenRow>
 
 @code {
+    private CardItem _cardItem = new();
 
+    private void OnShouldRepaint(CardItem cardItem)
+    {
+        _cardItem = cardItem;
+    }
 }

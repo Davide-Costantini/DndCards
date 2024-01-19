@@ -1,0 +1,246 @@
+﻿@inject IStringLocalizer<App> Loc
+
+<div class="d-flex justify-content-center">
+    <div class="card" style="width: @GetCardWidth(); height: @GetCardHeight();">
+        <div class="card-name">
+            @if (!string.IsNullOrWhiteSpace(_cardItem.Name))
+            {
+                <div>@_cardItem.Name</div>
+            }
+            else
+            {
+                <div>&nbsp;</div>
+            }
+        </div>
+
+
+        <div class="card-attunement">
+            @if (_cardItem.RequiresAttunement)
+            {
+                <div class="card-attunement-border">
+                    @Loc[nameof(Resources.App.Attunement)]
+                </div>
+            }
+            else
+            {
+                <div class="card-no-attunement">&nbsp;</div>
+            }
+        </div>
+
+        <img src="@_cardItem.ImageUri" class="card-image" style="max-width: @GetImageWidth(); max-height: @GetImageHeight(); min-width: @GetImageWidth(); min-height: @GetImageHeight()" />
+
+        <div class="card-floater">
+            <div class="card-type">
+                <div class="card-type-text">
+                    @if (!string.IsNullOrWhiteSpace(_cardItem.Type))
+                    {
+                        <div>@_cardItem.Type</div>
+                    }
+                    else
+                    {
+                        <div>&nbsp;</div>
+                    }
+                </div>
+            </div>
+
+            <div class="card-item-body">
+                @if (!string.IsNullOrWhiteSpace(_cardItem.Body))
+                {
+                    <div>@((MarkupString)_cardItem.Body)</div>
+                }
+                else
+                {
+                    <div>&nbsp;</div>
+                }
+            </div>
+
+            <div class="card-characteristics">
+                @if (!string.IsNullOrWhiteSpace(_cardItem.Characteristics))
+                {
+                    <div>@(_cardItem.Characteristics)</div>
+                }
+                else
+                {
+                    <div>&nbsp;</div>
+                }
+            </div>
+
+            <div class="card-footer">
+                @if (!string.IsNullOrWhiteSpace(_cardItem.Footer))
+                {
+                    <div>@(_cardItem.Footer)</div>
+                }
+                else
+                {
+                    <div>&nbsp;</div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter]
+    public CardItem CardItem { get; set; } = new();
+    private CardItem _cardItem = new();
+
+    protected override void OnParametersSet()
+    {
+        _cardItem.Name = CardItem.Name;
+        _cardItem.Body = CardItem.Body;
+        _cardItem.ImageUri = !string.IsNullOrWhiteSpace(CardItem.ImageUri) ? CardItem.ImageUri : CardItem.DefaultImage;
+        _cardItem.RequiresAttunement = CardItem.RequiresAttunement;
+        _cardItem.Type = CardItem.Type;
+        _cardItem.Characteristics = CardItem.Characteristics;
+        _cardItem.Footer = CardItem.Footer;
+    }
+
+    private string GetCardWidth()
+    {
+        return _cardItem.CardWidth.ToString() + "px";
+    }
+
+    private string GetCardHeight()
+    {
+        return _cardItem.CardHeight.ToString() + "px";
+    }
+
+    private string GetImageWidth()
+    {
+        return _cardItem.ImageWidth.ToString() + "px";
+    }
+
+    private string GetImageHeight()
+    {
+        return _cardItem.ImageHeight.ToString() + "px";
+    }
+}
+
+<style>
+    .card {
+        background-color: black;
+        border-radius: 8px;
+    }
+
+    .card-name {
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #f2f2f2;
+        width: 95%;
+        min-height: 45px;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        font-size: x-large;
+        border: solid 2px;
+        border-radius: 8px;
+        border-color: #565656;
+        box-shadow: 2px 2px 2px #565656;
+        translate: 0px 20px;
+    }
+
+    .card-attunement {
+        margin-left: auto;
+        margin-right: auto;
+        color: white;
+        font-size: smaller;
+        font-weight: lighter;
+        z-index: 10;
+        translate: 0px 15px;
+    }
+
+    .card-no-attunement {
+        padding-top: 1px;
+    }
+
+    .card-attunement-border {
+        padding-left: 16px;
+        padding-right: 16px;
+        border-left: 1px solid white;
+        border-right: 1px solid white;
+        border-bottom: 1px solid white;
+        border-radius: 7px;
+    }
+
+    .card-item-body {
+        min-height: 215px;
+        max-height: 215px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .card-image {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .card-floater {
+        background-color: #f2f2f2;
+        width: 95%;
+        min-height: 285px;
+        max-height: 285px;
+        border-radius: 8px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-top: 4px;
+        padding-left: 4px;
+        padding-right: 4px;
+        translate: 0px -150px;
+    }
+
+    .card-type {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        background-color: black;
+        width: 105%;
+        padding-top: 2px;
+        padding-bottom: 2px;
+        border: solid 2px;
+        border-radius: 8px;
+        border-color: #696969;
+        box-shadow: 4px 4px 4px;
+        translate: -11px -20px;
+    }
+
+    .card-type-text {
+        color: #f2f2f2;
+        font-size: large;
+        font-weight: bold;
+        text-align: start;
+        padding-left: 12px;
+    }
+
+    .card-characteristics {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 40%;
+        font-size: large;
+        font-style: oblique;
+        font-weight: bold;
+        border: 3px solid #b6b2b2;
+        padding: 5px 10px;
+        background-color: #ebe8e8;
+        border-radius: 8px;
+        translate: 270px;
+    }
+
+    .card-footer {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+        font-size: small;
+        font-style: italic;
+        font-weight: bold;
+        color: white;
+        text-align: start;
+        border: none;
+        background-color: transparent;
+        translate: 0px -22px;
+    }
+</style>
