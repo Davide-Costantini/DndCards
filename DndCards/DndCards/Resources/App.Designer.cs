@@ -97,7 +97,7 @@ namespace DndCards.Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Does not require attunement.
+        ///   Cerca una stringa localizzata simile a No attunement.
         /// </summary>
         public static string DoesNotRequireAttunement {
             get {
@@ -151,7 +151,7 @@ namespace DndCards.Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Requires attunement.
+        ///   Cerca una stringa localizzata simile a Attunement.
         /// </summary>
         public static string RequiresAttunement {
             get {

@@ -134,7 +134,7 @@
     <comment>MainLayout</comment>
   </data>
   <data name="DoesNotRequireAttunement" xml:space="preserve">
-    <value>Does not require attunement</value>
+    <value>No attunement</value>
     <comment>CardBuilderForm</comment>
   </data>
   <data name="ItemCharacteristics" xml:space="preserve">
@@ -158,7 +158,7 @@
     <comment>CardBuilderForm</comment>
   </data>
   <data name="RequiresAttunement" xml:space="preserve">
-    <value>Requires attunement</value>
+    <value>Attunement</value>
     <comment>CardBuilderForm</comment>
   </data>
   <data name="Themes" xml:space="preserve">
