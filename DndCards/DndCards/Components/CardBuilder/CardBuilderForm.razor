@@ -2,25 +2,74 @@
 
 <RadzenFileInput TValue="string" class="w-100" Change=@LoadImage MaxFileSize="int.MaxValue" ChooseText="@Loc[nameof(Resources.App.ChooseAnImage)]" />
 
-<RadzenText class="mt-5" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemName)]</RadzenText>
-<RadzenTextBox class="w-100" @bind-Value="@_cardItem.Name" Change=OnPropertyChanged />
+<RadzenRow class="mt-3">
+    <RadzenColumn Size="12" SizeLG="6">
+        <RadzenText TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">
+            @Loc[nameof(Resources.App.ItemName)]
+        </RadzenText>
+        <RadzenTextBox class="w-100" @bind-Value="@_cardItem.Name" Change=OnPropertyChanged />
+    </RadzenColumn>
 
-<RadzenToggleButton class="mt-3 w-100" @bind-Value="@_cardItem.RequiresAttunement" Change=@OnPropertyChanged
-                    Text="@(_cardItem.RequiresAttunement ? Loc[nameof(Resources.App.RequiresAttunement)] : Loc[nameof(Resources.App.DoesNotRequireAttunement)] )"
-                    ButtonStyle="ButtonStyle.Light" ToggleButtonStyle="ButtonStyle.Dark" />
+    <RadzenColumn Size="12" SizeLG="6">
+        <RadzenText TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">
+            &nbsp;
+        </RadzenText>
+        <RadzenToggleButton class="w-100" @bind-Value="@_cardItem.RequiresAttunement" Change=@OnPropertyChanged
+                            Text="@(_cardItem.RequiresAttunement ? Loc[nameof(Resources.App.RequiresAttunement)] : Loc[nameof(Resources.App.DoesNotRequireAttunement)] )"
+                            ButtonStyle="ButtonStyle.Light" ToggleButtonStyle="ButtonStyle.Dark" />
+    </RadzenColumn>
+</RadzenRow>
 
-<RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemType)]</RadzenText>
-<RadzenTextBox class="w-100" @bind-Value="@_cardItem.Type" Change=OnPropertyChanged />
+<RadzenRow class="mt-3">
+    <RadzenColumn Size="12">
+        <RadzenText TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">
+            @Loc[nameof(Resources.App.ItemType)]
+        </RadzenText>
+        <RadzenTextBox class="w-100" @bind-Value="@_cardItem.Type" Change=OnPropertyChanged />
+    </RadzenColumn>
+</RadzenRow>
 
-<RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemDescription)]</RadzenText>
-<RadzenHtmlEditor @bind-Value=@_cardItem.Body style="height: 300px;" Input=@OnPropertyChanged Change=@OnPropertyChanged 
-                  Paste=@OnPropertyChanged Execute=@OnPropertyChanged UploadUrl="upload/image" />
+<RadzenRow class="mt-3">
+    <RadzenColumn Size="12" SizeLG="6">
+        <RadzenText TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">
+            @Loc[nameof(Resources.App.ItemCharacteristics)]
+        </RadzenText>
+        <RadzenTextBox class="w-100" @bind-Value="@_cardItem.Characteristics" Change=OnPropertyChanged />
+    </RadzenColumn>
+    <RadzenColumn Size="12" SizeLG="6">
+        <RadzenText TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">
+            @Loc[nameof(Resources.App.ItemFooter)]
+        </RadzenText>
+        <RadzenTextBox class="w-100" @bind-Value="@_cardItem.Footer" Change=OnPropertyChanged />
+    </RadzenColumn>
+</RadzenRow>
 
-<RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemCharacteristics)]</RadzenText>
-<RadzenTextBox class="w-100" @bind-Value="@_cardItem.Characteristics" Change=OnPropertyChanged />
+<RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">
+    @Loc[nameof(Resources.App.ItemDescription)]
+</RadzenText>
+<RadzenHtmlEditor @bind-Value=@_cardItem.Body style="height: 400px;" Input=@OnPropertyChanged Change=@OnPropertyChanged
+                  Paste=@OnPropertyChanged Execute=@OnPropertyChanged UploadUrl="upload/image">
+    <RadzenHtmlEditorSeparator />
+    <RadzenHtmlEditorBold />
+    <RadzenHtmlEditorItalic />
+    <RadzenHtmlEditorUnderline />
+    <RadzenHtmlEditorStrikeThrough />
 
-<RadzenText class="mt-3" TextAlign="TextAlign.Start" TextStyle="TextStyle.Subtitle1" TagName="TagName.Div">@Loc[nameof(Resources.App.ItemFooter)]</RadzenText>
-<RadzenTextBox class="w-100" @bind-Value="@_cardItem.Footer" Change=OnPropertyChanged />
+    <RadzenHtmlEditorSeparator />
+    <RadzenHtmlEditorFontName />
+    <RadzenHtmlEditorFontSize />
+    <RadzenHtmlEditorAlignLeft />
+    <RadzenHtmlEditorAlignRight />
+    <RadzenHtmlEditorAlignCenter />
+    <RadzenHtmlEditorJustify />
+
+    <RadzenHtmlEditorSeparator />
+    <RadzenHtmlEditorUnorderedList />
+    <RadzenHtmlEditorOrderedList />
+
+    <RadzenHtmlEditorSeparator />
+    <RadzenHtmlEditorColor />
+</RadzenHtmlEditor>
 
 @code {
     private CardItem _cardItem = new();
