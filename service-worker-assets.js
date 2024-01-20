@@ -1,7 +1,7 @@
 ﻿self.assetsManifest = {
   "assets": [
     {
-      "hash": "sha256-yis2dNdJ6e9R472mcuwUOsxBPCQX3snSMmHAL3zu2D8=",
+      "hash": "sha256-UsVJZ4xlshsTeEzZlOvJvdeibUcrD+V7HlRDRe0OXYQ=",
       "url": "css\/app.css"
     },
     {
@@ -73,11 +73,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-yWFGhTOyquYL+kzh84WUeNGfL11GcczUcxFH5OebaMs=",
+      "hash": "sha256-dp7UDKmapKNTXenim8wxjVdAWmsfh4ajZ8cTYWIX4Bw=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-23x1zJYXVLAvwx43GgKYAxEpNM3ncaXisUYSqMAk4Fw=",
+      "hash": "sha256-8MZGDVr5+M8M8XNhidGfLLzh8y+rXbItwcwWkaEG5Sk=",
       "url": "_framework\/DndCards.wasm"
     },
     {
@@ -493,5 +493,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "vfpf40xv"
+  "version": "TmVyRTfp"
 };
