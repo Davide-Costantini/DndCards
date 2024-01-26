@@ -106,6 +106,15 @@ namespace DndCards.Resources {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a Download card.
+        /// </summary>
+        public static string DownloadCard {
+            get {
+                return ResourceManager.GetString("DownloadCard", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Item characteristics.
         /// </summary>
         public static string ItemCharacteristics {
