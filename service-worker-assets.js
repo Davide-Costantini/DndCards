@@ -29,7 +29,7 @@
       "url": "images\/RemirasBulwark.jpg"
     },
     {
-      "hash": "sha256-sGzdwDqUVQb6HqmiIxyP9sDkIPY3TepcNR/5nWhCczg=",
+      "hash": "sha256-VIyWDXUzn0cS7k40I7Cd12Nr2Sy7oIf3h3+lX6oAAoM=",
       "url": "index.html"
     },
     {
@@ -39,6 +39,14 @@
     {
       "hash": "sha256-paIeuWnSzjeLGITWkk4p3rcejUsZWCJGPeOK9UhWXtg=",
       "url": "sample-data\/weather.json"
+    },
+    {
+      "hash": "sha256-VksjlsxLcvBGIAdEdftvhf56tYtD+e0pI3KJyYyrJfs=",
+      "url": "scripts\/html2canvas.min.js"
+    },
+    {
+      "hash": "sha256-lDfIjbB\/eFqJUnM5iTKq4UseaaNMXc1HdNsiLb3V8cs=",
+      "url": "scripts\/takeScreenshot.js"
     },
     {
       "hash": "sha256-rcIWTVNnYus6VWf2Z2U1g\/JzlC07Ym02cFjHtI59Xsc=",
@@ -73,11 +81,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-dp7UDKmapKNTXenim8wxjVdAWmsfh4ajZ8cTYWIX4Bw=",
+      "hash": "sha256-y1BRzyIlffYnW1CKU8WGQPGIoTu+qZDm7zmKwDPa6Ms=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-8MZGDVr5+M8M8XNhidGfLLzh8y+rXbItwcwWkaEG5Sk=",
+      "hash": "sha256-NND28sSQ14BeclJUATdxOYgRzFE4QTn6O8DJ4V3TgC0=",
       "url": "_framework\/DndCards.wasm"
     },
     {
@@ -493,5 +501,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "TmVyRTfp"
+  "version": "FzuWEDCN"
 };
