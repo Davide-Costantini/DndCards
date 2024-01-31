@@ -1,40 +1,74 @@
 ﻿@inject IStringLocalizer<App> Loc
+@inject IJSRuntime JS
 
-<div class="d-flex justify-content-center">
-    <div class="card" style="width: @GetCardWidth(); height: @GetCardHeight();">
-        <div class="card-name">
-            @if (!string.IsNullOrWhiteSpace(_cardItem.Name))
-            {
-                <div>@_cardItem.Name</div>
-            }
-            else
-            {
-                <div>&nbsp;</div>
-            }
-        </div>
+<RadzenButton Click=@DownloadCard Text="@Loc[nameof(Resources.App.DownloadCard)]" ButtonStyle="ButtonStyle.Primary" />
 
+<div class="d-flex justify-content-center mt-2">
+    <div id="@_cardHtmlId">
+        <div class="card" style="width: @GetCardWidth(); height: @GetCardHeight();">
+            <div class="card-name">
+                @if (!string.IsNullOrWhiteSpace(_cardItem.Name))
+                {
+                    <div>@_cardItem.Name</div>
+                }
+                else
+                {
+                    <div>&nbsp;</div>
+                }
+            </div>
 
-        <div class="card-attunement">
-            @if (_cardItem.RequiresAttunement)
-            {
-                <div class="card-attunement-border">
-                    @Loc[nameof(Resources.App.Attunement)]
+            <img src="@_cardItem.ImageUri" class="card-image" style="max-width: @GetImageWidth(); max-height: @GetImageHeight(); min-width: @GetImageWidth(); min-height: @GetImageHeight()" />
+
+            <div class="card-floater">
+                <div class="card-type">
+                    <div class="card-type-text">
+                        @if (!string.IsNullOrWhiteSpace(_cardItem.Type))
+                        {
+                            <div>@_cardItem.Type</div>
+                        }
+                        else
+                        {
+                            <div>&nbsp;</div>
+                        }
+                    </div>
+                    <div class="card-attunement">
+                        @if (_cardItem.RequiresAttunement)
+                        {
+                            <i class="fa-solid fa-yin-yang"></i>
+                        }
+                        else
+                        {
+                            <div>&nbsp;</div>
+                        }
+                    </div>
                 </div>
-            }
-            else
-            {
-                <div class="card-no-attunement">&nbsp;</div>
-            }
-        </div>
 
-        <img src="@_cardItem.ImageUri" class="card-image" style="max-width: @GetImageWidth(); max-height: @GetImageHeight(); min-width: @GetImageWidth(); min-height: @GetImageHeight()" />
-
-        <div class="card-floater">
-            <div class="card-type">
-                <div class="card-type-text">
-                    @if (!string.IsNullOrWhiteSpace(_cardItem.Type))
+                <div class="card-item-body">
+                    @if (!string.IsNullOrWhiteSpace(_cardItem.Body))
                     {
-                        <div>@_cardItem.Type</div>
+                        <div>@((MarkupString)_cardItem.Body)</div>
+                    }
+                    else
+                    {
+                        <div>&nbsp;</div>
+                    }
+                </div>
+
+                <div class="card-characteristics">
+                    @if (!string.IsNullOrWhiteSpace(_cardItem.Characteristics))
+                    {
+                        <div>@(_cardItem.Characteristics)</div>
+                    }
+                    else
+                    {
+                        <div>&nbsp;</div>
+                    }
+                </div>
+
+                <div class="card-footer">
+                    @if (!string.IsNullOrWhiteSpace(_cardItem.Footer))
+                    {
+                        <div>@(_cardItem.Footer)</div>
                     }
                     else
                     {
@@ -42,48 +76,15 @@
                     }
                 </div>
             </div>
-
-            <div class="card-item-body">
-                @if (!string.IsNullOrWhiteSpace(_cardItem.Body))
-                {
-                    <div>@((MarkupString)_cardItem.Body)</div>
-                }
-                else
-                {
-                    <div>&nbsp;</div>
-                }
-            </div>
-
-            <div class="card-characteristics">
-                @if (!string.IsNullOrWhiteSpace(_cardItem.Characteristics))
-                {
-                    <div>@(_cardItem.Characteristics)</div>
-                }
-                else
-                {
-                    <div>&nbsp;</div>
-                }
-            </div>
-
-            <div class="card-footer">
-                @if (!string.IsNullOrWhiteSpace(_cardItem.Footer))
-                {
-                    <div>@(_cardItem.Footer)</div>
-                }
-                else
-                {
-                    <div>&nbsp;</div>
-                }
-            </div>
         </div>
     </div>
 </div>
-
 
 @code {
     [Parameter]
     public CardItem CardItem { get; set; } = new();
     private CardItem _cardItem = new();
+    private string _cardHtmlId = "card";
 
     protected override void OnParametersSet()
     {
@@ -115,6 +116,11 @@
     {
         return _cardItem.ImageHeight.ToString() + "px";
     }
+
+    public async System.Threading.Tasks.Task<string> DownloadCard()
+    {
+        return await JS.InvokeAsync<string>("takeScreenshot", _cardHtmlId, !string.IsNullOrWhiteSpace(_cardItem.Name) ? _cardItem.Name : "image");
+    }
 }
 
 <style>
@@ -138,31 +144,7 @@
         border: solid 2px;
         border-radius: 8px;
         border-color: #565656;
-        box-shadow: 2px 2px 2px #565656;
-        translate: 0px 20px;
-    }
-
-    .card-attunement {
-        margin-left: auto;
-        margin-right: auto;
-        color: white;
-        font-size: smaller;
-        font-weight: lighter;
-        z-index: 10;
-        translate: 0px 15px;
-    }
-
-    .card-no-attunement {
-        padding-top: 1px;
-    }
-
-    .card-attunement-border {
-        padding-left: 16px;
-        padding-right: 16px;
-        border-left: 1px solid white;
-        border-right: 1px solid white;
-        border-bottom: 1px solid white;
-        border-radius: 7px;
+        translate: 0px 10px;
     }
 
     .card-item-body {
@@ -175,6 +157,7 @@
     .card-image {
         margin-left: auto;
         margin-right: auto;
+        margin-top: 10px;
     }
 
     .card-floater {
@@ -188,7 +171,7 @@
         padding-top: 4px;
         padding-left: 4px;
         padding-right: 4px;
-        translate: 0px -150px;
+        translate: 0px -145px;
     }
 
     .card-type {
@@ -202,8 +185,9 @@
         border: solid 2px;
         border-radius: 8px;
         border-color: #696969;
-        box-shadow: 4px 4px 4px;
         translate: -11px -20px;
+        display: flex;
+        justify-content: space-between;
     }
 
     .card-type-text {
@@ -212,6 +196,14 @@
         font-weight: bold;
         text-align: start;
         padding-left: 12px;
+        padding-right: 12px;
+    }
+
+    .card-attunement {
+        color: #f2f2f2;
+        padding-left: 12px;
+        padding-right: 12px;
+        translate: 0px 2px;
     }
 
     .card-characteristics {
@@ -241,6 +233,6 @@
         text-align: start;
         border: none;
         background-color: transparent;
-        translate: 0px -22px;
+        translate: 0px -20px;
     }
 </style>

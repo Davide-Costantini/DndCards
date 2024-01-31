@@ -117,10 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Attunement" xml:space="preserve">
-    <value>Attunement</value>
-    <comment>CardBuilderCardPreview</comment>
-  </data>
   <data name="CardBuilder" xml:space="preserve">
     <value>Card builder</value>
     <comment>MainLayout</comment>
@@ -136,6 +132,10 @@
   <data name="DoesNotRequireAttunement" xml:space="preserve">
     <value>No attunement</value>
     <comment>CardBuilderForm</comment>
+  </data>
+  <data name="DownloadCard" xml:space="preserve">
+    <value>Download card</value>
+    <comment>CardBuilderCardPreview</comment>
   </data>
   <data name="ItemCharacteristics" xml:space="preserve">
     <value>Item characteristics</value>

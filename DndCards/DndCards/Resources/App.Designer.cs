@@ -61,15 +61,6 @@ namespace DndCards.Resources {
         }
         
         /// <summary>
-        ///   Cerca una stringa localizzata simile a Attunement.
-        /// </summary>
-        public static string Attunement {
-            get {
-                return ResourceManager.GetString("Attunement", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Cerca una stringa localizzata simile a Card builder.
         /// </summary>
         public static string CardBuilder {
@@ -102,6 +93,15 @@ namespace DndCards.Resources {
         public static string DoesNotRequireAttunement {
             get {
                 return ResourceManager.GetString("DoesNotRequireAttunement", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Download card.
+        /// </summary>
+        public static string DownloadCard {
+            get {
+                return ResourceManager.GetString("DownloadCard", resourceCulture);
             }
         }
         
