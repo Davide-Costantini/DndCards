@@ -31,10 +31,10 @@
                             <div>&nbsp;</div>
                         }
                     </div>
-                    <div class="card-type-text">
+                    <div class="card-attunement">
                         @if (_cardItem.RequiresAttunement)
                         {
-                            <div>@Loc[nameof(Resources.App.Attunement)]</div>
+                            <i class="fa-solid fa-yin-yang"></i>
                         }
                         else
                         {
@@ -197,6 +197,13 @@
         text-align: start;
         padding-left: 12px;
         padding-right: 12px;
+    }
+
+    .card-attunement {
+        color: #f2f2f2;
+        padding-left: 12px;
+        padding-right: 12px;
+        translate: 0px 2px;
     }
 
     .card-characteristics {
