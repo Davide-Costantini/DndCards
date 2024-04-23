@@ -106,6 +106,96 @@ namespace DndCards.Resources {
         }
         
         /// <summary>
+        ///   Cerca una stringa localizzata simile a For obtaining the best results you should use images that have an aspect ratio (H)eight / (W)idth of about.
+        /// </summary>
+        public static string ImageInfo {
+            get {
+                return ResourceManager.GetString("ImageInfo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a For example, an image having H = .
+        /// </summary>
+        public static string ImageInfoExample_1 {
+            get {
+                return ResourceManager.GetString("ImageInfoExample_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a and W = .
+        /// </summary>
+        public static string ImageInfoExample_2 {
+            get {
+                return ResourceManager.GetString("ImageInfoExample_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a  would have an aspect ratio H/W = .
+        /// </summary>
+        public static string ImageInfoExample_3 {
+            get {
+                return ResourceManager.GetString("ImageInfoExample_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a  and would be ideal.
+        /// </summary>
+        public static string ImageInfoExample_4 {
+            get {
+                return ResourceManager.GetString("ImageInfoExample_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a On the other side, an image having H = .
+        /// </summary>
+        public static string ImageInfoExampleBad_1 {
+            get {
+                return ResourceManager.GetString("ImageInfoExampleBad_1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a and W = .
+        /// </summary>
+        public static string ImageInfoExampleBad_2 {
+            get {
+                return ResourceManager.GetString("ImageInfoExampleBad_2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a  would have an aspect ratio H/W = .
+        /// </summary>
+        public static string ImageInfoExampleBad_3 {
+            get {
+                return ResourceManager.GetString("ImageInfoExampleBad_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a  and would result quite distorted.
+        /// </summary>
+        public static string ImageInfoExampleBad_4 {
+            get {
+                return ResourceManager.GetString("ImageInfoExampleBad_4", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una stringa localizzata simile a Image information.
+        /// </summary>
+        public static string ImageInformation {
+            get {
+                return ResourceManager.GetString("ImageInformation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Cerca una stringa localizzata simile a Item characteristics.
         /// </summary>
         public static string ItemCharacteristics {

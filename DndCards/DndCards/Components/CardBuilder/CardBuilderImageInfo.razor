@@ -1,0 +1,43 @@
+﻿@inherits DialogBase
+
+@inject IStringLocalizer<App> Loc
+
+<RadzenStack Gap="1.5rem">
+    <RadzenStack Orientation="Orientation.Vertical" Gap="1rem">
+        <div class="mb-4">
+            <p class="m-0">
+                @Loc[nameof(Resources.App.ImageInfo)]
+                <span class="fw-bold">@Math.Round(((double)CardItem.DefaultImageHeight / (double)CardItem.DefaultImageWidth), 2)</span>
+            </p>
+            <p class="mt-2">
+                @Loc[nameof(Resources.App.ImageInfoExample_1)] @CardItem.DefaultImageHeight
+                @Loc[nameof(Resources.App.ImageInfoExample_2)] @CardItem.DefaultImageWidth
+                @Loc[nameof(Resources.App.ImageInfoExample_3)] @Math.Round(((double)CardItem.DefaultImageHeight / (double)CardItem.DefaultImageWidth), 2)
+                @Loc[nameof(Resources.App.ImageInfoExample_4)]
+            </p>
+            <div class="d-flex gap-4 justify-content-center">
+                <img src="@CardItem.DefaultImage" alt="Default Image" style="max-width: 260px; max-height: 260px; width: 260px; height: 260px;" />
+                <img src="@CardItem.DefaultCard" alt="Default Card" style="max-width: 100%; max-height: 260px; height: 260px;" />
+            </div>
+            <p class="mt-4">
+                @Loc[nameof(Resources.App.ImageInfoExampleBad_1)] @_badImageHeight
+                @Loc[nameof(Resources.App.ImageInfoExampleBad_2)] @_badImageWidth
+                @Loc[nameof(Resources.App.ImageInfoExampleBad_3)] @Math.Round((_badImageHeight / _badImageWidth), 2)
+                @Loc[nameof(Resources.App.ImageInfoExampleBad_4)]
+            </p>
+            <div class="d-flex gap-4 justify-content-center">
+                <img src="@CardItem.BadImage" alt="Bad Image" style="max-width: 260px; max-height: 130px; width: 260px; height: 130px;" />
+                <img src="@CardItem.BadCard" alt="Default Card" style="max-width: 100%; max-height: 260px; height: 260px;" />
+            </div>
+        </div>
+
+        <RadzenStack Orientation="Orientation.Horizontal" JustifyContent="JustifyContent.Right">
+            <RadzenButton Text="Ok" Click="() => DialogService.Close(true)" Style="width: 80px;" />
+        </RadzenStack>
+    </RadzenStack>
+</RadzenStack>
+
+@code {
+    private double _badImageHeight = 504;
+    private double _badImageWidth = 1024;
+}

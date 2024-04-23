@@ -8,11 +8,16 @@
         public static readonly string DefaultCharacteristics = "+2 AC";
         public static readonly string DefaultFooter = "Not for sale";
         public static readonly string DefaultImage = "images/RemirasBulwark.jpg";
+        public static readonly string DefaultCard = "images/RemirasBulwarkCard.png";
+        public static readonly string BadImage = "images/SunSword.jpg";
+        public static readonly string BadCard = "images/SunSwordCard.png";
 
         public static readonly double DefaultCardHeightOverWidth = 1.37;
         public static readonly int DefaultCardWidth = 500;
         public static readonly int DefaultCardHeight = (int) (DefaultCardWidth * DefaultCardHeightOverWidth);
         public static readonly double DefaultCardOverImageDimensions = 0.93;
+        public static readonly int DefaultImageWidth = (int) (DefaultCardWidth * DefaultCardOverImageDimensions);
+        public static readonly int DefaultImageHeight = 465;
 
         public string Name { get; set; } = DefaultName;
         public string Body { get; set; } = DefaultBody;
@@ -23,7 +28,7 @@
         public string ImageUri { get; set; } = DefaultImage;
         public int CardWidth { get; set; } = DefaultCardWidth;
         public int CardHeight { get; set; } = DefaultCardHeight;
-        public int ImageWidth { get; set; } = (int) (DefaultCardWidth * DefaultCardOverImageDimensions);
-        public int ImageHeight { get; set; } = 465;
+        public int ImageWidth { get; set; } = DefaultImageWidth;
+        public int ImageHeight { get; set; } = DefaultImageHeight;
     }
 }

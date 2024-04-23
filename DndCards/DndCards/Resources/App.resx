@@ -137,6 +137,46 @@
     <value>Download card</value>
     <comment>CardBuilderCardPreview</comment>
   </data>
+  <data name="ImageInfo" xml:space="preserve">
+    <value>For obtaining the best results you should use images that have an aspect ratio (H)eight / (W)idth of about</value>
+    <comment>CarbBuilderImageInfo</comment>
+  </data>
+  <data name="ImageInfoExampleBad_1" xml:space="preserve">
+    <value>On the other side, an image having H = </value>
+    <comment>CarbBuilderImageInfo</comment>
+  </data>
+  <data name="ImageInfoExampleBad_2" xml:space="preserve">
+    <value>and W = </value>
+    <comment>CarbBuilderImageInfo</comment>
+  </data>
+  <data name="ImageInfoExampleBad_3" xml:space="preserve">
+    <value> would have an aspect ratio H/W = </value>
+    <comment>CarbBuilderImageInfo</comment>
+  </data>
+  <data name="ImageInfoExampleBad_4" xml:space="preserve">
+    <value> and would result quite distorted</value>
+    <comment>CarbBuilderImageInfo</comment>
+  </data>
+  <data name="ImageInfoExample_1" xml:space="preserve">
+    <value>For example, an image having H = </value>
+    <comment>CarbBuilderImageInfo</comment>
+  </data>
+  <data name="ImageInfoExample_2" xml:space="preserve">
+    <value>and W = </value>
+    <comment>CarbBuilderImageInfo</comment>
+  </data>
+  <data name="ImageInfoExample_3" xml:space="preserve">
+    <value> would have an aspect ratio H/W = </value>
+    <comment>CarbBuilderImageInfo</comment>
+  </data>
+  <data name="ImageInfoExample_4" xml:space="preserve">
+    <value> and would be ideal</value>
+    <comment>CarbBuilderImageInfo</comment>
+  </data>
+  <data name="ImageInformation" xml:space="preserve">
+    <value>Image information</value>
+    <comment>CardBuilderForm</comment>
+  </data>
   <data name="ItemCharacteristics" xml:space="preserve">
     <value>Item characteristics</value>
     <comment>CardBuilderForm</comment>

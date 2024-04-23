@@ -1,6 +1,14 @@
 ﻿@inject IStringLocalizer<App> Loc
+@inject DialogService DialogService
 
-<RadzenFileInput TValue="string" class="w-100" Change=@LoadImage MaxFileSize="int.MaxValue" ChooseText="@Loc[nameof(Resources.App.ChooseAnImage)]" />
+<RadzenRow>
+    <RadzenColumn Size="11">
+        <RadzenFileInput TValue="string" class="w-100" Change=@LoadImage MaxFileSize="int.MaxValue" ChooseText="@Loc[nameof(Resources.App.ChooseAnImage)]" />
+    </RadzenColumn>
+    <RadzenColumn Size="1">
+        <RadzenButton Icon="info" ButtonStyle="ButtonStyle.Light" Click=OnOpenImageInfoPopup class="mt-1" />
+    </RadzenColumn>
+</RadzenRow>
 
 <RadzenRow class="mt-3">
     <RadzenColumn Size="12" SizeLG="6">
@@ -86,5 +94,11 @@
     {
         _cardItem.ImageUri = image;
         await OnPropertyChanged();
+    }
+
+    private async Task OnOpenImageInfoPopup()
+    {
+        var dialogOptions = new DialogOptions() { CloseDialogOnOverlayClick = true };
+        var result = await DialogService.OpenAsync(Loc[nameof(Resources.App.ImageInformation)], ds => @<CardBuilderImageInfo DialogService="@ds" />, dialogOptions);
     }
 }
