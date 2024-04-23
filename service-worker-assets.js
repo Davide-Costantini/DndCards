@@ -49,7 +49,7 @@
       "url": "images\/SunSwordCard.png"
     },
     {
-      "hash": "sha256-VIyWDXUzn0cS7k40I7Cd12Nr2Sy7oIf3h3+lX6oAAoM=",
+      "hash": "sha256-viDkrgsXcWkT2Vcx31vjmXzGBISo7Tgh3wfkvpSVunk=",
       "url": "index.html"
     },
     {
@@ -101,11 +101,11 @@
       "url": "_framework\/icudt_no_CJK.dat"
     },
     {
-      "hash": "sha256-VI8PipH0\/Jt2+nvuYA9eAFfiBBsTjfdOkNXDywYQXaE=",
+      "hash": "sha256-5vPnNRJrLtOtYq6PAYfT3pX5kXVhKjdIqrQP28TDF9s=",
       "url": "_framework\/blazor.boot.json"
     },
     {
-      "hash": "sha256-++MgK0UPw+1gqI2d0RKYBuqIaRgc8ICl\/mj7+vZzAZw=",
+      "hash": "sha256-+sm1Z5akL\/72XCBwZgONwYQcsFJxArqAq520MUN5Ydg=",
       "url": "_framework\/DndCards.wasm"
     },
     {
@@ -521,5 +521,5 @@
       "url": "_content\/Radzen.Blazor\/Radzen.Blazor.js"
     }
   ],
-  "version": "Xp52kJAg"
+  "version": "Wo48elEI"
 };
