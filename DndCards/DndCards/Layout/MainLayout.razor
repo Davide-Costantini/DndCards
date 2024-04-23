@@ -15,11 +15,14 @@
                     <RadzenLabel Text="@Loc[nameof(Resources.App.DndCardsHeader)]" />
                 </RadzenStack>
             </RadzenHeader>
-            <RadzenSidebar @bind-Expanded="@_isSidebarExpanded">
+            <RadzenSidebar @bind-Expanded="@_isSidebarExpanded" class="d-flex flex-column justify-content-between" >
                 <RadzenPanelMenu>
                     <RadzenPanelMenuItem Text="@Loc[nameof(Resources.App.CardBuilder)]" Icon="create" Path="cardBuilder" />
                     <RadzenPanelMenuItem Text="@Loc[nameof(Resources.App.Themes)]" Icon="color_lens" Path="themes" />
                 </RadzenPanelMenu>
+                <div class="d-flex justify-content-center">
+                    <img src="images/LogoNoBackground.png" alt="Logo" style="max-width: 85%; max-height: 85%;" class="align-self-end" />
+                </div>
             </RadzenSidebar>
             <RadzenBody>
                 <div class="rz-p-4">
